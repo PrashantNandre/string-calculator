@@ -22,4 +22,10 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	assertEquals(3, stringCalculator.add("1,2"));
     }
+    
+    @Test
+    void string_with_number_with_delemiter_return_Sum() {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(6, stringCalculator.add("1\n2,3"));
+    }
 }
