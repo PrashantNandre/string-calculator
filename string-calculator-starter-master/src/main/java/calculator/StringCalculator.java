@@ -18,16 +18,20 @@ class StringCalculator {
     }
     
     private int getSum(String[] numbers) throws Exception {
-    	for(String current:numbers) {
-    		if(stringToInt(current) < 0) {
-    			throw new Exception("Negative Input");
-    		}
-    	}
+    	PassException(numbers);
     	int sum = 0;
     	for(int current = 0; current<numbers.length; current++) {
     		sum = sum+Integer.parseInt(numbers[current]);
     	}
     	return sum;
+    }
+    
+    private void PassException(String[] numbers) throws Exception {
+    	for(String current:numbers) {
+    		if(stringToInt(current) < 0) {
+    			throw new Exception("Negative Input");
+    		}
+    	}
     }
     
     private boolean isEmpty(String input) {
