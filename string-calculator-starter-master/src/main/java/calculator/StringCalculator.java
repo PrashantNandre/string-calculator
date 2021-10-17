@@ -20,8 +20,11 @@ class StringCalculator {
     private int getSum(String[] numbers) throws Exception {
     	PassException(numbers);
     	int sum = 0;
-    	for(int current = 0; current<numbers.length; current++) {
-    		sum = sum+Integer.parseInt(numbers[current]);
+    	for(String current:numbers) {
+    		if(stringToInt(current) > 1000) {
+    			continue;
+    		}
+    		sum=sum+stringToInt(current);
     	}
     	return sum;
     }

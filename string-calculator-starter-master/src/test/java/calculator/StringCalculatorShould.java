@@ -38,4 +38,10 @@ class StringCalculatorShould {
     	StringCalculator stringCalculator = new StringCalculator();
     	stringCalculator.add("-1");
     }
+    
+    @Test
+    void ignores_numbers_greater_than_1000() throws Exception {
+    	StringCalculator stringCalculator = new StringCalculator();
+    	assertEquals(20, stringCalculator.add("10,10,1001"));
+    }
 }
